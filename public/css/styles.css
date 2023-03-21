@@ -11288,7 +11288,7 @@ textarea.form-control-lg {
 
 
 .navbar.bg-dark {
-  background-color: #bebebf;
-  color: #fff3cd;
+  background-color: #000 !important;
+  color: #000;
   transition:500ms ease;
 }

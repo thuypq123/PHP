@@ -13,11 +13,14 @@
         $sanpham = $sanPhamController->getSanPhamById($_GET['id']);
         $limitSanPham = $sanPhamController->getLimitSanPham(4);
         require('./app/views/detail.php');
+    }elseif($GetURL == '/register') {
+        require('./app/views/register.php');
+    }
+    elseif($GetURL == '/login') {
+        require('./app/views/login.php');
     }
     else {
         // Nếu không phù hợp với bất kỳ route nào, trả về trang 404
         header('HTTP/1.0 404 Not Found');
         echo 'Page not found';
-        echo $request_uri;  
     }
-?>

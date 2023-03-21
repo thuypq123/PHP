@@ -1,4 +1,5 @@
 <?php
+    echo $_SESSION["MaKhachHang"];
     require(dirname(__DIR__).'\models\SanPhamModel.php');
     class SanPhamController {
         public function getAllSanPham() {
