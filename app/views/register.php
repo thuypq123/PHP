@@ -1,4 +1,11 @@
 <?php
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}
+  if($_SESSION["isLogin"]){
+      header('location:/');
+  };
     require('./app/views/layout/navbar.php');
 ?>
 

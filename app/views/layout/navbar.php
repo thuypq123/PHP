@@ -1,3 +1,7 @@
+<?php
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,6 +14,8 @@
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="/public/css/styles.css" rel="stylesheet" />
     </head>
@@ -38,11 +44,14 @@
                             </li>
                         </ul>
                         <form class="d-flex">
-                            <button class="btn btn-outline-dark" type="submit">
+                            <button class="btn btn-outline-dark" type="submit" style = "margin-right: 10px">
                                 <i class="bi-cart-fill me-1"></i>
                                 Cart
                                 <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                             </button>
+                        </form>
+                        <form action="clear-session" class="d-flex" method="POST" >
+                            <button type="submit" class="btn btn-outline-dark">Đăng xuất</button>
                         </form>
                     </div>
                 </div>

@@ -1,5 +1,9 @@
 <?php
-    echo $_SESSION["MaKhachHang"];
+    session_start();
+    if (!$_SESSION["isLogin"]){
+        header('Location: /login');
+    }
+    echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
     require(dirname(__DIR__).'\models\SanPhamModel.php');
     class SanPhamController {
         public function getAllSanPham() {
@@ -8,7 +12,6 @@
             if (mysqli_num_rows($allSanPham) > 0) {
                 // Tạo một mảng để chứa dữ liệu đó
                 $SanPham = array();
-            
                 // Duyệt qua các bản ghi trong kết quả truy vấn và thêm chúng vào mảng dữ liệu
                 while ($row = mysqli_fetch_assoc($allSanPham)) {
                     $SanPham[] = $row;

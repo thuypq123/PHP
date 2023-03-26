@@ -44,7 +44,7 @@ const register = async (e) => {
                         text: 'Bạn sẽ được đưa về trang đăng nhập!',
                         iconColor: '#4c505c',
                     }).then((result) => {
-                        window.location.href = 'login.php';
+                        window.location.href = 'login';
                     });
                 } else {
                     Swal.fire({

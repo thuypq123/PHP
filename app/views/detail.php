@@ -1,5 +1,8 @@
 <?php
-    require('./app/views/layout/navbar.php')
+    require('./app/views/layout/navbar.php');
+    if(!isset($_SESSION)){
+        session_start();
+    }
 ?>
 <!-- Product section-->
 <section class="py-5">
@@ -15,8 +18,8 @@
                 </div>
                 <p class="lead"><?php echo $sanpham['ChiTiet'] ?></p>
                 <div class="d-flex">
-                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                    <button onclick="testClick('<?php echo $sanpham['MaSanPham']; ?>')" class="btn btn-outline-dark flex-shrink-0" type="button">
+                    <input class="form-control text-center me-3" id="soLuong" type="num" value="1" style="max-width: 3rem" />
+                    <button onclick="addCard('<?php echo $sanpham['MaSanPham']?>','<?php echo $_SESSION['MaHoaDon']; ?>')" class="btn btn-outline-dark flex-shrink-0" type="button">
                         <i class="bi-cart-fill me-1"></i>
                         Thêm Vào Giỏ Hàng
                     </button>

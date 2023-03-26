@@ -3,7 +3,7 @@
     if(isset($_POST['action'])){
         if ($_POST['action'] == "login") { func1(); }
     }
-
+    
     function func1(){
         $registeModel = new loginModel();
         $password = $_POST['password'];

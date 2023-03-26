@@ -1,7 +1,8 @@
 <?php 
-
+    session_start();
     $GetURL =  parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    if ($GetURL == '/') {
+    echo $GetURL;
+    if ($GetURL == '/' || $GetURL == '/index.php') {
         // Nếu yêu cầu là trang chủ, gọi đến HomeController
         require(dirname(__FILE__).'\app\controllers\SanPhamController.php');
         $sanPhamController = new SanPhamController();
@@ -18,6 +19,11 @@
     }
     elseif($GetURL == '/login') {
         require('./app/views/login.php');
+    }
+    elseif( $GetURL == '/clear-session'){
+        $_SESSION["isLogin"] = false;
+        header('Location: /login');
+        exit();
     }
     else {
         // Nếu không phù hợp với bất kỳ route nào, trả về trang 404

@@ -1,4 +1,11 @@
 <?php
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
+  if($_SESSION["isLogin"]){
+    header('location:/');
+  };
     require('./app/views/layout/navbar.php');
 ?>
 
@@ -16,7 +23,7 @@
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
+                    <div class="flex-fill mb-0">
                         <label class="form-label" for="form3Example3c">Email</label>
                       <input type="email" id="email" class="form-control" />
                     </div>
@@ -24,7 +31,7 @@
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
+                    <div class=" flex-fill mb-0">
                         <label class="form-label" for="form3Example4c">Mật Khẩu</label>
                       <input type="password" id="password" class="form-control" />
                     </div>
