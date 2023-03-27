@@ -25,7 +25,6 @@
         exit();
     }
     else {
-        // Nếu không phù hợp với bất kỳ route nào, trả về trang 404
         header('HTTP/1.0 404 Not Found');
         echo 'Page not found';
     }
