@@ -8,6 +8,21 @@ const addCard = async (MaSanPham, MaHoaDon) => {
             text: 'Vui lòng nhập số lượng!',
             iconColor: '#4c505c',
         });
+    } else if (soLuong < 1) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Không thành công!',
+            text: 'Số lượng phải lớn hơn 0!',
+            iconColor: '#4c505c',
+        });
+    } // regex validate number only
+    else if (!/^[0-9]+$/.test(soLuong)) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Không thành công!',
+            text: 'Số lượng phải là số nguyên!',
+            iconColor: '#4c505c',
+        });
     } else {
         $.ajax({
             type: 'POST',
@@ -16,13 +31,13 @@ const addCard = async (MaSanPham, MaHoaDon) => {
                 action: 'addCard',
                 MaSanPham: MaSanPham,
                 MaHoaDon: MaHoaDon,
-                soLuong: soLuong,
+                SoLuong: soLuong,
             },
             success: function (response) {
                 if (response.data) {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Thêm vào giỏ hàng thành công',
+                        title: 'Thành công!',
                         text: response.message,
                         iconColor: '#4c505c',
                     });
