@@ -1,7 +1,6 @@
 <?php 
     session_start();
     $GetURL =  parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    echo $GetURL;
     if ($GetURL == '/' || $GetURL == '/index.php') {
         // Nếu yêu cầu là trang chủ, gọi đến HomeController
         require(dirname(__FILE__).'\app\controllers\SanPhamController.php');

@@ -39,5 +39,17 @@
                 }
             }
         }
+        public function getListSanPhamInCard($MaHoaDon){
+            $conn = Database::getInstance();
+            $query = "SELECT * FROM chitiethoadon WHERE MaHoaDon = '$MaHoaDon'";
+            $result = mysqli_query($conn, $query);
+            $listSanPham = array();
+            while($row = mysqli_fetch_array($result)){
+                $listSanPham[] = $row;
+            }
+            echo json_encode($listSanPham); 
+            mysqli_close($conn);
+            return $listSanPham;
+        }
     }
 ?>
