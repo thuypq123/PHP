@@ -8,6 +8,11 @@
     $MaHoaDon = $_POST['MaHoaDon'];
     $SoLuong = $_POST['SoLuong'];
     $MaKhachHang = $_SESSION["MaKhachHang"];
-    $addToCardModel = new addToCardModel();
-    $addToCardModel->addToCard($MaKhachHang,$MaHoaDon,$MaSanPham,$SoLuong);
+    if(isset($_POST['action'])){
+        if ($_POST['action'] == "addCard") { addToCard($MaKhachHang,$MaHoaDon,$MaSanPham,$SoLuong); }
+    }
+    function addToCard($MaKhachHang,$MaHoaDon,$MaSanPham,$SoLuong){
+        $addToCardModel = new addToCardModel();
+        $addToCardModel->addToCard($MaKhachHang,$MaHoaDon,$MaSanPham,$SoLuong);
+    }
 ?>
