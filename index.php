@@ -1,6 +1,7 @@
 <?php 
     session_start();
     $GetURL =  parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    // echo $GetURL;
     if ($GetURL == '/' || $GetURL == '/index.php') {
         // Nếu yêu cầu là trang chủ, gọi đến HomeController
         require(dirname(__FILE__).'\app\controllers\SanPhamController.php');
@@ -23,6 +24,9 @@
         $_SESSION["isLogin"] = false;
         header('Location: /login');
         exit();
+    }
+    elseif( $GetURL == '/admin'){
+        require('./app/views/home/admin.php');
     }
     else {
         header('HTTP/1.0 404 Not Found');
