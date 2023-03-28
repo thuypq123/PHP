@@ -23,6 +23,6 @@
     function getListSanPhamInCard($MaHoaDon){
         $addToCardModel = new addToCardModel();
         $listCard = $addToCardModel->getListSanPhamInCard($MaHoaDon);
-        // require()
+        echo json_encode($listCard);
     }
 ?>
