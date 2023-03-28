@@ -22,6 +22,7 @@
     }
     function getListSanPhamInCard($MaHoaDon){
         $addToCardModel = new addToCardModel();
-        $addToCardModel->getListSanPhamInCard($MaHoaDon);
+        $listCard = $addToCardModel->getListSanPhamInCard($MaHoaDon);
+        // require()
     }
 ?>

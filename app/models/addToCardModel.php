@@ -65,7 +65,16 @@
             while($row = mysqli_fetch_array($result)){
                 $listSanPham[] = $row;
             }
-            echo json_encode($listSanPham); 
+            // get all product in chitiethoadon table
+            for($i = 0; $i < count($listSanPham); $i++){
+                $MaSanPham = $listSanPham[$i]["MaSanPham"];
+                $query = "SELECT * FROM sanpham WHERE MaSanPham = '$MaSanPham'";
+                $result = mysqli_query($conn, $query);
+                $row = mysqli_fetch_array($result);
+                $listSanPham[$i]["TenSanPham"] = $row["TenSanPham"];
+                $listSanPham[$i]["GiaSanPham"] = $row["GiaSanPham"];
+                $listSanPham[$i]["AnhSanPham"] = $row["AnhSanPham"];
+            }
             mysqli_close($conn);
             return $listSanPham;
         }
