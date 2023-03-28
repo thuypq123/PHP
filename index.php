@@ -28,7 +28,18 @@
         require('./app/views/shoppingCrad.php');
     }
     elseif( $GetURL == '/admin'){
-        require('./app/views/home/admin.php');
+        if(!$_SESSION["isLoginAdmin"])
+        {
+            header('Location: /login_admin');
+            exit();
+        }
+        require('./app/views/adminViews/admin.php');
+    }elseif($GetURL == '/login_admin'){
+        require('./app/views/adminViews/login_admin.php');
+    }elseif( $GetURL == '/logout'){
+        $_SESSION["isLoginAdmin"] = false;
+        header('Location: /login_adminvb ');
+        exit();
     }
     else {
         header('HTTP/1.0 404 Not Found');
