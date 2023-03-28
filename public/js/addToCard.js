@@ -56,3 +56,20 @@ const addCard = async (MaSanPham, MaHoaDon) => {
         });
     }
 };
+const getCard = async () => {
+    console.log('get card');
+    $.ajax({
+        type: 'POST',
+        url: '../../app/controllers/addToCardController.php',
+        data: {
+            action: 'getCard',
+        },
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (error) {
+            console.log(error);
+        },
+    });
+};
+getCard();

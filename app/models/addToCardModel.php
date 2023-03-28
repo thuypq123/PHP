@@ -17,7 +17,13 @@
                 $result = mysqli_query($conn, $query);
                 $row = mysqli_fetch_array($result);
                 if($row == null){
-                    $query = "INSERT INTO chitiethoadon (MaHoaDon, MaSanPham, SoLuong) VALUES ('$MaHoaDon', '$MaSanPham', '$SoLuong')";
+                    // find and caculate total price of product with quantity
+                    $query = "SELECT * FROM sanpham WHERE MaSanPham = '$MaSanPham'";
+                    $result = mysqli_query($conn, $query);
+                    $row = mysqli_fetch_array($result);
+                    $GiaSanPham = $row["GiaSanPham"];
+                    $ThanhTien = $GiaSanPham * $SoLuong;
+                    $query = "INSERT INTO chitiethoadon (MaHoaDon, MaSanPham, SoLuong, TongTien) VALUES ('$MaHoaDon', '$MaSanPham', '$SoLuong', '$ThanhTien')";
                     $result = mysqli_query($conn, $query);
                     $query = "UPDATE sanpham SET SoLuongSanPham = SoLuongSanPham - $SoLuong WHERE MaSanPham = '$MaSanPham'";
                     $result = mysqli_query($conn, $query);
@@ -28,6 +34,18 @@
                 }else{
                     // update SoLuong in chitiethoadon table 
                     $query = "UPDATE ChiTietHoaDon SET SoLuong = SoLuong + $SoLuong WHERE MaHoaDon = '$MaHoaDon' AND MaSanPham = '$MaSanPham'";
+                    $result = mysqli_query($conn, $query);
+                    // find and update total price of product with quantity
+                    $query = "SELECT * FROM sanpham WHERE MaSanPham = '$MaSanPham'";
+                    $result = mysqli_query($conn, $query);
+                    $row = mysqli_fetch_array($result);
+                    $GiaSanPham = $row["GiaSanPham"];
+                    // find so luong in chitiethoadon table
+                    $query = "SELECT * FROM chiTietHoaDon WHERE MaHoaDon = '$MaHoaDon' AND MaSanPham = '$MaSanPham'";
+                    $result = mysqli_query($conn, $query);
+                    $row = mysqli_fetch_array($result);
+                    $ThanhTien = $GiaSanPham * $row["SoLuong"];
+                    $query = "UPDATE ChiTietHoaDon SET TongTien = $ThanhTien WHERE MaHoaDon = '$MaHoaDon' AND MaSanPham = '$MaSanPham'";
                     $result = mysqli_query($conn, $query);
                     // minus SoLuong in sanpham table
                     $query = "UPDATE sanpham SET SoLuongSanPham = SoLuongSanPham - $SoLuong WHERE MaSanPham = '$MaSanPham'";
