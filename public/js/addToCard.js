@@ -98,13 +98,19 @@ const getCard = async () => {
                         )}</p>
                         <div class="def-number-input number-input safari_only">
                           <button type="button p-1" class="btn btn-dark"
-                            onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepDown(); processChanges('${
+                                item.MaSanPham
+                            }', '${item.MaHoaDon}')"
                             class="minus">-</button>
-                          <input class="w-50 p-1" min="0" name="quantity" value="${
-                              item.SoLuong
-                          }" type="number">
+                          <input id = "soLuong_${
+                              item.MaSanPham
+                          }" class="w-50 p-1" min="0" name="quantity" value="${
+                    item.SoLuong
+                }" type="number">
                           <button type="button w-50 p-1" class="btn btn-dark"
-                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                            onclick="this.parentNode.querySelector('input[type=number]').stepUp(); processChanges('${
+                                item.MaSanPham
+                            }', '${item.MaHoaDon}')"
                             class="plus">+</button>
                         </div>
                       </div>
@@ -119,3 +125,72 @@ const getCard = async () => {
     });
 };
 getCard();
+
+function debounce(func, timeout = 300) {
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            func.apply(this, args);
+        }, timeout);
+    };
+}
+
+function updateCard(MaSanPham, MaHoaDon) {
+    const soLuong = document.getElementById('soLuong_' + MaSanPham).value;
+    // $.ajax({
+    //     type: 'POST',
+    //     url: '../../app/controllers/addToCardController.php',
+    //     data: {
+    //         action: 'updateCard',
+    //         MaSanPham: MaSanPham,
+    //         MaHoaDon: MaHoaDon,
+    //         SoLuong: soLuong,
+    //     },
+    //     success: function (response) {
+    //         console.log(response);
+    //     },
+    //     error: function (error) {},
+    // });
+
+    // check the soluong is number or not
+    if (!/^[0-9]+$/.test(soLuong)) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Không thành công!',
+            text: 'Số lượng phải là số nguyên!',
+            iconColor: '#4c505c',
+        });
+    } else if (soLuong == 0) {
+        // notify to user confirm delete?
+        Swal.fire({
+            title: 'Bạn có chắc chắn muốn xóa sản phẩm này?',
+            showDenyButton: true,
+            confirmButtonText: `Xóa`,
+            denyButtonText: `Hủy`,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire('Saved!', '', 'success');
+                document.getElementById('inner_card').innerHTML = '';
+                $.ajax({
+                    type: 'POST',
+                    url: '../../app/controllers/addToCardController.php',
+                    data: {
+                        action: 'updateCard',
+                        MaSanPham: MaSanPham,
+                        MaHoaDon: MaHoaDon,
+                        SoLuong: soLuong,
+                    },
+                    success: function (response) {
+                        console.log(response);
+                    },
+                    error: function (error) {},
+                });
+            }
+        });
+    }
+}
+
+const processChanges = debounce((MaSanPham, MaHoaDon) =>
+    updateCard(MaSanPham, MaHoaDon)
+);

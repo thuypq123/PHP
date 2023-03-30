@@ -14,6 +14,11 @@
         }elseif ($_POST['action'] == "getCard") {
             $MaHoaDon = $_SESSION['MaHoaDon'];
             getListSanPhamInCard($MaHoaDon);
+        }elseif ($_POST['action'] == "updateCard") {
+            $MaSanPham = $_POST['MaSanPham'];
+            $MaHoaDon = $_POST['MaHoaDon'];
+            $SoLuong = $_POST['SoLuong'];
+            updateCardModel($MaHoaDon,$MaSanPham,$SoLuong);
         }
     }
     function addToCard($MaKhachHang,$MaHoaDon,$MaSanPham,$SoLuong){
@@ -24,5 +29,9 @@
         $addToCardModel = new addToCardModel();
         $listCard = $addToCardModel->getListSanPhamInCard($MaHoaDon);
         echo json_encode($listCard);
+    }
+    function updateCardModel($MaHoaDon,$MaSanPham,$SoLuong){
+        $addToCardModel = new addToCardModel();
+        $addToCardModel->updateCardModel($MaHoaDon,$MaSanPham,$SoLuong);
     }
 ?>

@@ -25,8 +25,8 @@
                     $ThanhTien = $GiaSanPham * $SoLuong;
                     $query = "INSERT INTO chitiethoadon (MaHoaDon, MaSanPham, SoLuong, TongTien) VALUES ('$MaHoaDon', '$MaSanPham', '$SoLuong', '$ThanhTien')";
                     $result = mysqli_query($conn, $query);
-                    $query = "UPDATE sanpham SET SoLuongSanPham = SoLuongSanPham - $SoLuong WHERE MaSanPham = '$MaSanPham'";
-                    $result = mysqli_query($conn, $query);
+                    // $query = "UPDATE sanpham SET SoLuongSanPham = SoLuongSanPham - $SoLuong WHERE MaSanPham = '$MaSanPham'";
+                    // $result = mysqli_query($conn, $query);
                     mysqli_close($conn);
                     header('Content-Type: application/json; charset=utf-8');
                     $data = array('data' => true, 'message' => 'Thêm san phẩm vào giỏ hàng thành công');
@@ -42,14 +42,14 @@
                     $GiaSanPham = $row["GiaSanPham"];
                     // find so luong in chitiethoadon table
                     $query = "SELECT * FROM chiTietHoaDon WHERE MaHoaDon = '$MaHoaDon' AND MaSanPham = '$MaSanPham'";
-                    $result = mysqli_query($conn, $query);
+                    $result = mysqli_query($conn, $query); 
                     $row = mysqli_fetch_array($result);
                     $ThanhTien = $GiaSanPham * $row["SoLuong"];
                     $query = "UPDATE ChiTietHoaDon SET TongTien = $ThanhTien WHERE MaHoaDon = '$MaHoaDon' AND MaSanPham = '$MaSanPham'";
                     $result = mysqli_query($conn, $query);
                     // minus SoLuong in sanpham table
-                    $query = "UPDATE sanpham SET SoLuongSanPham = SoLuongSanPham - $SoLuong WHERE MaSanPham = '$MaSanPham'";
-                    $result = mysqli_query($conn, $query);
+                    // $query = "UPDATE sanpham SET SoLuongSanPham = SoLuongSanPham - $SoLuong WHERE MaSanPham = '$MaSanPham'";
+                    // $result = mysqli_query($conn, $query);
                     mysqli_close($conn);
                     header('Content-Type: application/json; charset=utf-8');
                     $data = array('data' => true, 'message' => 'Thêm sản phẩm vào giỏ hàng thành công');
@@ -77,6 +77,12 @@
             }
             mysqli_close($conn);
             return $listSanPham;
+        }
+        public function updateCardModel($MaHoaDon,$MaSanPham,$SoLuong){
+            $conn = Database::getInstance();
+            echo $MaHoaDon." ---";
+            echo $MaSanPham." ---";
+            echo $SoLuong;
         }
     }
 ?>
