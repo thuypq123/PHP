@@ -2,7 +2,7 @@
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
-        </div>
+        
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
@@ -35,6 +35,7 @@
     <script src="../../../public/assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="../../../public/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="../../../public/dist/js/pages/chart/chart-page-init.js"></script>
+    
 
 </body>
 

@@ -43,8 +43,8 @@
     }elseif ($GetURL == '/product_admin') {
         // Nếu yêu cầu là trang chủ, gọi đến HomeController
         require(dirname(__FILE__).'\app\controllers\adminControllers\product_adminController.php');
-        $ProductAdminController = new SanPhamController();
-        $sanPhamadminController->getAllSanPham();
+        $ProductAdminController = new ProductController();
+        $ProductAdminController->getAllSanPham();
     }
     else {
         header('HTTP/1.0 404 Not Found');

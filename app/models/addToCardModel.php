@@ -80,9 +80,14 @@
         }
         public function updateCardModel($MaHoaDon,$MaSanPham,$SoLuong){
             $conn = Database::getInstance();
-            echo $MaHoaDon." ---";
-            echo $MaSanPham." ---";
-            echo $SoLuong;
+            if ($SoLuong == 0){
+                // delete product in chitiethoadon table
+                $query = "DELETE FROM chitiethoadon WHERE MaHoaDon = '$MaHoaDon' AND MaSanPham = '$MaSanPham'";
+                $result = mysqli_query($conn, $query);
+                mysqli_close($conn);
+                header('Content-Type: application/json; charset=utf-8');
+                $data = array('data' => true, 'message' => 'Xóa sản phẩm khỏi giỏ hàng thành công');
+            }
         }
     }
 ?>

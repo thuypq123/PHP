@@ -24,6 +24,11 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+       
 </head>
 
 <body>
@@ -170,8 +175,8 @@
                                     <a class="dropdown-item" href="javascript:void(0)"><i
                                             class="ti-settings me-1 ms-1"></i> Account Setting</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/logout"><i
-                                            class="fa fa-power-off me-1 ms-1"></i> Logout</a>
+                                    <a class="dropdown-item" href="/logout"><i class="fa fa-power-off me-1 ms-1"></i>
+                                        Logout</a>
                                     <div class="dropdown-divider"></div>
                                     <div class="ps-4 p-10"><a href="javascript:void(0)"
                                             class="btn btn-sm btn-success btn-rounded text-white">View Profile</a></div>
@@ -198,13 +203,13 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="index.html" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                href="/admin" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Trang chủ</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="charts.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span
                                     class="hide-menu">Đơn hàng</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="widgets.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
+                                href="/product_admin" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
                                     class="hide-menu">Sản phẩm</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="tables.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
@@ -212,10 +217,10 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span
                                     class="hide-menu">Full Width</span></a></li>
-                        
+
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="pages-buttons.html" aria-expanded="false"><i
-                                    class="mdi mdi-relative-scale"></i><span class="hide-menu">Buttons</span></a></li>                
+                                    class="mdi mdi-relative-scale"></i><span class="hide-menu">Buttons</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="pages-elements.html" aria-expanded="false"><i class="mdi mdi-pencil"></i><span
                                     class="hide-menu">Elements</span></a></li>
@@ -261,22 +266,3 @@
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-        <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <div class="page-breadcrumb">
-                <div class="row">
-                    <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Dashboard</h4>
-                        <div class="ms-auto text-end">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Library</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>

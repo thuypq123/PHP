@@ -3,8 +3,8 @@
     if (!$_SESSION["isLoginAdmin"]){
         header('Location: /login_admin');
     }
-    echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
-    require(dirname(__DIR__).'\models\adminModels\product_adminModel.php');
+    // echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
+    require(dirname(__DIR__, 2).'\models\adminModels\product_adminModel.php');
     class ProductController {
         public function getAllSanPham() {
             $sanPhamModel = new SanPhamModel();
@@ -17,7 +17,7 @@
                     $SanPham[] = $row;
                 }
             }
-            require(dirname(__DIR__).'\views\home\SanPham.php');
+            require(dirname(__DIR__, 2).'\views\adminViews\product_admin.php');
         }
         public function getSanPhamById($id) {
             $sanPhamModel = new SanPhamModel();

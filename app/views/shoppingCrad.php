@@ -16,7 +16,7 @@ require('./app/views/layout/navbar.php');
           <div class="card-body text-black">
 
             <div class="row">
-              <div class="col-lg-6 px-5 py-4">
+              <div class="col-lg-7 px-5 py-4">
 
                 <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Your products</h3>
                 <div id = "inner_card" class="inner_card" style="overflow: auto; height:50vh">
@@ -34,7 +34,7 @@ require('./app/views/layout/navbar.php');
                 </div>
 
               </div>
-              <div class="col-lg-6 px-5 py-4">
+              <div class="col-lg-5 px-5 py-4">
 
                 <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase">Payment</h3>
 

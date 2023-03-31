@@ -97,21 +97,22 @@ const getCard = async () => {
                             item.GiaSanPham
                         )}</p>
                         <div class="def-number-input number-input safari_only">
-                          <button type="button p-1" class="btn btn-dark"
+                          <button type="button p-1" class="btn btn-dark w-10 p-2"
                             onclick="this.parentNode.querySelector('input[type=number]').stepDown(); processChanges('${
                                 item.MaSanPham
                             }', '${item.MaHoaDon}')"
                             class="minus">-</button>
                           <input id = "soLuong_${
                               item.MaSanPham
-                          }" class="w-50 p-1" min="0" name="quantity" value="${
+                          }" class="w-50 p-1" min="1" name="quantity" value="${
                     item.SoLuong
                 }" type="number">
-                          <button type="button w-50 p-1" class="btn btn-dark"
+                          <button type="button" class="btn btn-dark w-10 p-2"
                             onclick="this.parentNode.querySelector('input[type=number]').stepUp(); processChanges('${
                                 item.MaSanPham
                             }', '${item.MaHoaDon}')"
                             class="plus">+</button>
+                            <button type="button" class="btn btn-danger w-10 p-2">x</button>
                         </div>
                       </div>
                     </div>
@@ -182,11 +183,43 @@ function updateCard(MaSanPham, MaHoaDon) {
                         SoLuong: soLuong,
                     },
                     success: function (response) {
-                        console.log(response);
+                        // notify to user
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Thành công!',
+                            text: response.message,
+                        }).then(() => {
+                            card.innerHTML = '';
+                            getCard();  
+                        });
                     },
                     error: function (error) {},
                 });
             }
+        });
+    }else{
+        document.getElementById('inner_card').innerHTML = '';
+        $.ajax({
+            type: 'POST',
+            url: '../../app/controllers/addToCardController.php',
+            data: {
+                action: 'updateCard',
+                MaSanPham: MaSanPham,
+                MaHoaDon: MaHoaDon,
+                SoLuong: soLuong,
+            },
+            success: function (response) {
+                // notify to user
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Thành công!',
+                    text: response.message,
+                }).then(() => {
+                    card.innerHTML = '';
+                    getCard();  
+                });
+            },
+            error: function (error) {},
         });
     }
 }
