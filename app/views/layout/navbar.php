@@ -31,11 +31,10 @@
     <?php
     $GetURL =  parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     if ($GetURL !== '/register' && $GetURL !== '/login') {
-        $page = "/views/Mac.php";
         echo '
                 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navbar-default ">
                 <div class="container px-4 px-lg-5">
-                    <a class="navbar-brand" href="/">TTN Shop</a>
+                    <a class="navbar-brand" href="/">Start Bootstrap</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -46,13 +45,8 @@
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#!">All Products</a></li>
                                     <li><hr class="dropdown-divider" /></li>
-                                    <li><a class="dropdown-item" href="#!">iPhone</a></li>
-                                    <li><a class="dropdown-item" href="$Mac.php">Mac</a></li>
-                                    <li><a class="dropdown-item" href="#!">iPad</a></li>
-                                    <li><a class="dropdown-item" href="#!">Watch</a></li>
-                                    <li><a class="dropdown-item" href="#!">Âm thanh</a></li>
-                                    <li><a class="dropdown-item" href="#!">Phụ kiện</a></li>
-                                    
+                                    <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                                    <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -63,9 +57,7 @@
                                 <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                             </button>
                         </form>
-                        <form action="clear-session" class="d-flex" method="POST" >
-                            <button type="submit" class="btn btn-outline-dark">Đăng xuất</button>
-                        </form>
+                       
                     </div>
                 </div>
             </nav>';
@@ -76,8 +68,53 @@
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
                 <h1 class="display-4 fw-bolder">Shop in style</h1>
-                <img src="/public/assets/images/img-product/socss-top-2400-600-1920x480-1.webp" alt="">
-                <p class="lead fw-normal text-white-50 mb-0">Thông tin sản phẩm</p>
+                <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
             </div>
         </div>
-    </header>
+        <div id="header">
+            <div class="head">
+                <div class="logo-topzone">
+                    <a href="">
+                        <img src="" alt="">
+                    </a>
+                    <a href="" class="premium-apple">
+                        <i class="fa-brands fa-apple"></i>
+                    </a>
+                </div>
+                <ul class="menu">
+                    <li>
+                        <a>iPhone</a>
+                    </li>
+                    <li>
+                        <a>Mac</a>
+                    </li>
+                    <li>
+                        <a>iPad</a>
+                    </li>
+                    <li>
+                        <a>Watch</a>
+                    </li>
+                    <li>
+                        <a>Âm Thanh</a>
+                    </li>
+                    <li>
+                        <a>Phụ kiện</a>
+                    </li>
+                    <li>
+                        <a>TekZone</a>
+                    </li>
+                    <li>
+                        <a>TopCare</a>
+                    </li>
+                </ul>
+                <div class="search-cart">
+                    <div class="search-ic">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <a href="#" class="cart-ic">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
