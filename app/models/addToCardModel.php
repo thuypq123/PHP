@@ -87,6 +87,22 @@
                 mysqli_close($conn);
                 header('Content-Type: application/json; charset=utf-8');
                 $data = array('data' => true, 'message' => 'Xóa sản phẩm khỏi giỏ hàng thành công');
+            }elseif($SoLuong>0){
+                // update SoLuong in chitiethoadon table
+                $query = "update chitiethoadon set SoLuong = $SoLuong where MaHoaDon = '$MaHoaDon' AND MaSanPham = '$MaSanPham'";
+                $result = mysqli_query($conn, $query);
+                // find and update total price of product with quantity
+                $query = "SELECT * FROM sanpham WHERE MaSanPham = '$MaSanPham'";
+                $result = mysqli_query($conn, $query);
+                $row = mysqli_fetch_array($result);
+                $GiaSanPham = $row["GiaSanPham"];
+                $ThanhTien = $GiaSanPham * $SoLuong;
+                $query = "update chitiethoadon set TongTien = $ThanhTien where MaHoaDon = '$MaHoaDon' AND MaSanPham = '$MaSanPham'";
+                $result = mysqli_query($conn, $query);
+                mysqli_close($conn);
+                header('Content-Type: application/json; charset=utf-8');
+                $data = array('data' => true, 'message' => 'Cập nhật giỏ hàng thành công');
+                echo json_encode($data);
             }
         }
     }

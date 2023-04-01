@@ -104,15 +104,20 @@ const getCard = async () => {
                             class="minus">-</button>
                           <input id = "soLuong_${
                               item.MaSanPham
-                          }" class="w-50 p-1" min="1" name="quantity" value="${
-                    item.SoLuong
-                }" type="number">
+                          }" onchange = "processChanges('${item.MaSanPham}', '${
+                    item.MaHoaDon
+                }')"" class="w-50 p-1" min="1" name="quantity" 
+                          value="${item.SoLuong}" type="number">
                           <button type="button" class="btn btn-dark w-10 p-2"
                             onclick="this.parentNode.querySelector('input[type=number]').stepUp(); processChanges('${
                                 item.MaSanPham
                             }', '${item.MaHoaDon}')"
                             class="plus">+</button>
-                            <button type="button" class="btn btn-danger w-10 p-2">x</button>
+                            <button onclick="processChanges('${
+                                item.MaSanPham
+                            }', '${
+                    item.MaHoaDon
+                }', 0)" type="button" class="btn btn-danger w-10 p-2">x</button>
                         </div>
                       </div>
                     </div>
@@ -137,24 +142,12 @@ function debounce(func, timeout = 300) {
     };
 }
 
-function updateCard(MaSanPham, MaHoaDon) {
-    const soLuong = document.getElementById('soLuong_' + MaSanPham).value;
-    // $.ajax({
-    //     type: 'POST',
-    //     url: '../../app/controllers/addToCardController.php',
-    //     data: {
-    //         action: 'updateCard',
-    //         MaSanPham: MaSanPham,
-    //         MaHoaDon: MaHoaDon,
-    //         SoLuong: soLuong,
-    //     },
-    //     success: function (response) {
-    //         console.log(response);
-    //     },
-    //     error: function (error) {},
-    // });
-
-    // check the soluong is number or not
+function updateCard(MaSanPham, MaHoaDon, getSoluong) {
+    const soLuong =
+        getSoluong == 0
+            ? getSoluong
+            : document.getElementById('soLuong_' + MaSanPham).value;
+    console.log(getSoluong);
     if (!/^[0-9]+$/.test(soLuong)) {
         Swal.fire({
             icon: 'warning',
@@ -190,14 +183,14 @@ function updateCard(MaSanPham, MaHoaDon) {
                             text: response.message,
                         }).then(() => {
                             card.innerHTML = '';
-                            getCard();  
                         });
                     },
                     error: function (error) {},
                 });
+                getCard();
             }
         });
-    }else{
+    } else {
         document.getElementById('inner_card').innerHTML = '';
         $.ajax({
             type: 'POST',
@@ -209,21 +202,21 @@ function updateCard(MaSanPham, MaHoaDon) {
                 SoLuong: soLuong,
             },
             success: function (response) {
-                // notify to user
                 Swal.fire({
                     icon: 'success',
                     title: 'Thành công!',
                     text: response.message,
                 }).then(() => {
                     card.innerHTML = '';
-                    getCard();  
+                    getCard();
                 });
             },
             error: function (error) {},
         });
+        getCard();
     }
 }
 
-const processChanges = debounce((MaSanPham, MaHoaDon) =>
-    updateCard(MaSanPham, MaHoaDon)
+const processChanges = debounce((MaSanPham, MaHoaDon, getSoluong) =>
+    updateCard(MaSanPham, MaHoaDon, getSoluong)
 );
