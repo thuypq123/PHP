@@ -129,6 +129,332 @@
 /* End Header */
 
 
+
+/* Chi-tiet-SP */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+section{
+    display: block;
+    
+}
+#header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #101010;
+    height: 60px;
+    display: flex;
+    z-index: 1;
+}
+#header .head{
+    margin: 0 160px;
+    display: flex;
+    margin: auto;
+
+}
+#header .logo-topzone{
+    display: flex;
+    align-items: center;
+}
+
+#header .logo-topzone img {
+    width: 103px;
+    height: 35px;
+    line-height: 60px;
+    margin-right: 10px;
+    border-right: 1px solid #ccc;
+}
+#header .logo-topzone .premium-apple {
+    text-decoration: none;
+    width: 100px;
+    /* height: 84px; */
+    color: #fff;
+    list-style-type: none;
+    width: 100%;
+    font-size: 32px;
+}
+#header .logo-topzone .premium-apple a i{
+    color: #fff;
+}
+.head .menu{
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin: 0 15px; */
+}
+.head .menu li{
+    display: block;
+    text-decoration: none;
+    text-align: center; 
+}
+.head .menu li a{
+    /* display: block;
+    width: 100%; */
+}
+.head .menu li {
+    width: 50%;
+    /* height: 60px; */
+    line-height: 50px;
+}
+.head .menu li:hover {
+    cursor: pointer;
+    background-color: #f1d608;
+    border-radius: 5px;
+    padding: 2px;
+    color: #101010;
+    display: block;
+}
+.head .menu li{
+    text-decoration: none;
+    list-style-type: none;
+    color: #fff;
+}
+.search-cart{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    justify-content: space-between;
+}   
+.head .search-cart .search-ic{
+    line-height: 60px;
+    background: #2f3033;
+    border-radius: 100%;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    position: relative;
+    cursor: pointer;
+}   
+.head .search-cart .search-ic:hover{
+    background-color: #f1d608;
+    cursor: pointer;
+    color: #101010;
+}
+.head .search-cart .search-ic i{
+    position: absolute;
+    top: 33%;
+    left: 33%;
+    color: #fff;
+
+}
+.head .search-cart .cart-ic:hover{
+    background-color: #f1d608;
+    cursor: pointer;
+    color: #101010;
+}
+.head .search-cart .cart-ic{
+    line-height: 60px;
+    background: #2f3033;
+    border-radius: 100%;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.head .search-cart .cart-ic i{
+    position: absolute;
+    top: 33%;
+    left: 28%;
+    color: #fff;
+}
+.clear{
+    content: "";
+    clear: both;
+}
+.intro-details{
+    margin-top: 60px;
+
+    background-color: #3e3e3f;
+    min-height: 805px;
+    display: flex;
+    height: 1000px;
+}
+
+.intro-details .center-page{
+    min-width: 1180px;
+    max-width: 1180px;
+    margin: auto;
+    /* background-color: #ccc; */
+    display: flex;
+    justify-content: center;
+}
+.center-page .slider-details-img{
+    width: 550px;
+    margin-right: 20px;
+    position: sticky;
+    top: 15px;
+    padding-bottom: 110px;
+    height: 600px;
+    flex: 1.5;
+
+    
+}
+.center-page .slider-details-img img{
+    max-height: 600px;
+    object-position: center;
+    display: block;
+    
+}
+.center-page .slider-details{
+    height: auto;
+    flex: 1.5;
+    color: #fff;
+    
+}
+.center-page .slider-details h1{
+    font-size: 32px;
+    color: #fff;
+    margin: 10px 0;
+}
+.center-page .slider-details span{
+    margin: 5px 0;
+}
+.center-page .slider-details strong{
+    font-size: 30px;
+}
+.center-page .slider-details strong strike{
+    font-size: 25px;
+}
+.center-page .slider-details .capacity{
+    display: block;
+}
+.center-page .slider-details .capacity span{
+    margin-bottom: 5px;
+}
+.center-page .slider-details .capacity ul{
+    text-decoration: none;
+    list-style-type: none;
+    margin-left: -20px;   
+    
+}
+.center-page .slider-details .capacity ul li{
+    float: left;
+    margin: 10px 20px;
+    padding: 5px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+.center-page .slider-details .capacity >ul > li:focus{
+    background-color: #1C1C1D;
+    cursor: pointer;
+}
+.center-page .slider-details .clear{
+    content: "";
+    display: table;
+    clear: both;
+}
+.center-page .slider-details .capacity ul li{
+
+}
+.slider-details .content-promo{
+    margin: 20px 0;
+    background-color: #2F3033 ;
+    color: #fff;
+}
+.center-page .slider-details .promotion-detail{
+    margin: 5px 0;
+}
+.center-page .slider-details .content-promo{
+    padding: 20px;
+    border-radius: 15px;
+}
+.slider-details .content-promo ul .content-details li{
+    list-style-type: none;
+}
+.slider-details .content-promo .content-details{
+    text-align: left;
+}
+.slider-details .content-promo p .content-details > li > b >p{
+    display: block;
+    margin: 50px;
+   
+}
+/* btn-buy */
+.btn-buy{
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    /* background-color: #ccc; */
+    height: auto;
+    text-align: center;
+
+}
+.btn-buy-muangay{
+    flex: 2;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    background-color: #0071E3;
+    padding: 18px 0;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
+
+    
+}
+.btn-buy-child{
+    display: flex;
+    
+    
+}
+.btn-buy-muatragop{
+    display: inline;
+    flex: 1;
+    background-color: #FFFFFF;
+    color: #000;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 500;
+
+
+}
+.btn-creadit-card{
+    display: inline;
+    flex: 1;
+    background-color: #FFFFFF;
+    color: #000;
+    margin-left: 10px;
+    justify-content: center;
+    padding: 10px 0;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+.btn-creadit-card small{
+    display: block;
+}   
+.policy{
+    margin: 15px;
+}
+.policy li{
+    list-style-type: none;
+}
+.policy li i{
+    margin-right: 15px;
+    margin-bottom: 5px;
+
+}
+.policy li span{
+    word-wrap: break-word;
+    
+}
+
+
+/* End Chi-tiet-SP */
+
+
+/* Footer */
 #footer{
     width: 100%;
     background: #101010;
