@@ -1,19 +1,30 @@
 <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
-        </footer>
-    </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+    </div>
+</footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- Core theme JS-->
-    <script src="../../../public/js/scripts.js"></script>
-    <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
-    <div id="footer">
+<!-- Core theme JS-->
+<script src="../../../public/js/scripts.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+
+
+
+<?php
+    $url = "path/to/image.jpg"; // đường dẫn đến file ảnh
+   
+
+    
+?>
+<div id="footer">
         <div class="foot">
             <div class="logo-foot">
                 <a href="">
-                    <img src="./design/img/logo-topzone-1.png" alt="">
+                    <img src="/public/assets/images/img-product/logo-topzone-1.png" alt="">
                 </a>
                 <a href="" class="premium-apple">
                     <i class="fa-brands fa-apple"></i>
@@ -76,13 +87,13 @@
                 </div>
                 <div class="certify">
                     <a href="">
-                        <img src="./design/img/certify-bct.png" alt="">
+                        <img src="/public/assets/images/img-product/certify-bct.png" alt="">
                     </a>
                     <a href="">
-                        <img src="./design/img/_dmca_premi_badge_4.png" alt="">
+                        <img src="/public/assets/images/img-product/_dmca_premi_badge_4.png" alt="">
                     </a>
                     <a href="">
-                        <img src="./design/img/handle_cert.png" alt="">
+                        <img src="/public/assets/images/img-product/handle_cert.png" alt="">
                     </a>
                 </div>
             </div>
@@ -91,19 +102,22 @@
             <p class="footer-logo-text">Ghé thăm các website khác cùng tập đoàn MWG</p>
             <ul>
                 <li>
-                    <img src="./design/img/footer-logo-tgdd/bach_hoa_xanh_khuyen_mai_1_da6a8c8243.jpg" alt="">
+                    <img src="/public/assets/images/img-product/footer-logo-tgdd/bach_hoa_xanh_khuyen_mai_1_da6a8c8243.jpg" alt="">
                 </li>
                 <li>
-                    <img src="./design/img/footer-logo-tgdd/d79b2ed361c064ca015cbfc2a8dfdac0.png" alt="">
+                    <img src="/public/assets/images/img-product/footer-logo-tgdd/d79b2ed361c064ca015cbfc2a8dfdac0.png" alt="">
                 </li>
-                <li><img src="./design/img/footer-logo-tgdd/dien-may-xanh-1024x576.jpg" alt=""></li>
-                <li><img src="./design/img/footer-logo-tgdd/download-logo-vector-nha-thuoc-an-khang-mien-phi.jpg" alt=""></li>
-                <li><img src="./design/img/footer-logo-tgdd/download-logo-vector-nha-thuoc-an-khang-mien-phi.jpg" alt=""></li>
-                <li><img src="./design/img/footer-logo-tgdd/img-intro.png" alt=""></li>
-                <li><img src="./design/img/footer-logo-tgdd/Logo-Thegioididong.jpg" alt=""></li>
-                <li><img src="./design/img/footer-logo-tgdd/tải xuống.png" alt=""></li>
-                <li><img src="./design/img/footer-logo-tgdd/dien-may-xanh-1024x576.jpg" alt=""></li>
+                <li><img src="/public/assets/images/img-product/footer-logo-tgdd/dien-may-xanh-1024x576.jpg" alt=""></li>
+                <li><img src="/public/assets/images/img-product/footer-logo-tgdd/download-logo-vector-nha-thuoc-an-khang-mien-phi.jpg" alt=""></li>
+                <li><img src="/public/assets/images/img-product/footer-logo-tgdd/download-logo-vector-nha-thuoc-an-khang-mien-phi.jpg" alt=""></li>
+                <li><img src="/public/assets/images/img-product/footer-logo-tgdd/img-intro.png" alt=""></li>
+                <li><img src="/public/assets/images/img-product/footer-logo-tgdd/Logo-Thegioididong.jpg" alt=""></li>
+                <li><img src="/public/assets/images/img-product/footer-logo-tgdd/tải xuống.png" alt=""></li>
+                <li><img src="/public/assets/images/img-product/footer-logo-tgdd/dien-may-xanh-1024x576.jpg" alt=""></li>
             </ul>
         </div>
     </div>
+
+
+
 </html>

@@ -1,3 +1,134 @@
+/* Header */
+#header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #101010;
+    height: 60px;
+    display: flex;
+    z-index: 1;
+}
+#header .head{
+    margin: 0 160px;
+    display: flex;
+    margin: auto;
+
+}
+#header .logo-topzone{
+    display: flex;
+    align-items: center;
+}
+
+#header .logo-topzone img {
+    width: 103px;
+    height: 35px;
+    line-height: 60px;
+    margin-right: 10px;
+    border-right: 1px solid #ccc;
+}
+#header .logo-topzone .premium-apple {
+    text-decoration: none;
+    width: 100px;
+    /* height: 84px; */
+    color: #fff;
+    list-style-type: none;
+    width: 100%;
+    font-size: 32px;
+}
+#header .logo-topzone .premium-apple a i{
+    color: #fff;
+}
+.head .menu{
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* margin: 0 15px; */
+}
+.head .menu li{
+    display: block;
+    text-decoration: none;
+    text-align: center; 
+}
+.head .menu li a{
+    /* display: block;
+    width: 100%; */
+}
+.head .menu li {
+    width: 50%;
+    /* height: 60px; */
+    line-height: 50px;
+}
+.head .menu li:hover {
+    cursor: pointer;
+    background-color: #f1d608;
+    border-radius: 5px;
+    padding: 2px;
+    color: #101010;
+    display: block;
+}
+.head .menu li{
+    text-decoration: none;
+    list-style-type: none;
+    color: #fff;
+}
+.search-cart{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    justify-content: space-between;
+}   
+.head .search-cart .search-ic{
+    line-height: 60px;
+    background: #2f3033;
+    border-radius: 100%;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    position: relative;
+    cursor: pointer;
+}   
+.head .search-cart .search-ic:hover{
+    background-color: #f1d608;
+    cursor: pointer;
+    color: #101010;
+}
+.head .search-cart .search-ic i{
+    position: absolute;
+    top: 33%;
+    left: 33%;
+    color: #fff;
+
+}
+.head .search-cart .cart-ic:hover{
+    background-color: #f1d608;
+    cursor: pointer;
+    color: #101010;
+}
+.head .search-cart .cart-ic{
+    line-height: 60px;
+    background: #2f3033;
+    border-radius: 100%;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.head .search-cart .cart-ic i{
+    position: absolute;
+    top: 33%;
+    left: 28%;
+    color: #fff;
+}
+.clear{
+    content: "";
+    clear: both;
+}
+/* End Header */
+
+
 #footer{
     width: 100%;
     background: #101010;

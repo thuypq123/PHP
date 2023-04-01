@@ -18,10 +18,59 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="/public/css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/public/assets/images/img-product/logo-topzone-1.png">
         <link rel="stylesheet" href="/public/css/main.css">
     </head>
     <body>
         <!-- Navigation-->
+        <header>
+        <div id="header">
+        <div class="head">
+            <div class="logo-topzone">
+                <a href="">
+                    <img src="" alt="">
+                </a>
+                <a href="" class="premium-apple">
+                    <i class="fa-brands fa-apple"></i>
+                </a>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a>iPhone</a>
+                </li>
+                <li>
+                    <a>Mac</a>
+                </li>
+                <li>
+                    <a>iPad</a>
+                </li>
+                <li>
+                    <a>Watch</a>
+                </li>
+                <li>
+                    <a>Âm Thanh</a>
+                </li>
+                <li>
+                    <a>Phụ kiện</a>
+                </li>
+                <li>
+                    <a>TekZone</a>
+                </li>
+                <li>
+                    <a>TopCare</a>
+                </li>
+            </ul>
+            <div class="search-cart">
+                <div class="search-ic">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <a href="#" class="cart-ic">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+        </header>
         <?php
             $GetURL =  parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
             if( $GetURL !== '/register' && $GetURL !== '/login'){
@@ -68,3 +117,4 @@
                 </div>
             </div>
         </header>
+       
