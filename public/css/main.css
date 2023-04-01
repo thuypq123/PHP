@@ -1,0 +1,127 @@
+#footer{
+    width: 100%;
+    background: #101010;
+}
+#footer .foot {
+    width: 100%;
+    max-width: 1200px;
+    min-width: 1024px;
+    margin: auto;
+    display: block;
+    padding-bottom: 10px;
+    height: 500px;
+}
+#footer .foot .logo-foot{
+    width:100%;
+    padding: 30px 0;
+    
+}
+#footer .foot .logo-foot a{
+    display: inline-block;
+}
+#footer .foot .logo-foot a > img{    /* line-height: 40px; */
+    display: block;
+    width: 103px;
+    height: 35px;
+}
+#footer .foot .logo-foot a > img {
+    text-decoration: none;
+    padding: 0 10px 0 0;
+    border-right: 1px solid #3b3b3b;
+    margin-right: 10px;
+}
+#footer .foot .logo-foot .premium-apple{
+
+}
+#footer .foot .logo-foot .premium-apple i{
+    width: 100%;
+    font-size: 32px;
+    color: #fff;
+    height: 35px;
+}
+/* list-foot */
+.foot .list-foot{
+    color: #fff;
+    display: flex;
+    margin: 0 20px;
+    justify-content: space-between;
+}
+.foot .list-foot li {
+    display: flex;
+    flex-direction: column;
+
+}
+.foot .list-foot li{
+    list-style-type: none;
+}
+.foot .list-foot li span{
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+.foot .list-foot li a{
+    text-decoration: none;
+    list-style-type: none;
+    margin: 8px 0;
+    color: #fff;
+}
+.foot .list-foot li a:hover{
+    text-decoration: underline;
+}
+.foot .text-cpr{
+    display: flex;
+    color: #fff;
+    margin-top: 20px;
+    justify-content: space-evenly;
+}
+.foot .text-cpr p{
+    word-wrap: break-word;
+    box-sizing: content-box;
+    display: block;
+}
+.foot .text-cpr .certify{
+    display: flex;
+    text-align: center;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+}
+.foot .text-cpr .certify a{
+    width: 127px;
+    height: 47px;
+    margin-left: 20px;
+}
+.foot .text-cpr .certify a img{
+    display: block;
+    width: 100%;
+}
+/* footer-logo */
+.footer-logo{
+    background-color: #222222;
+    padding: 15px 15px 5px 15px;
+
+}
+.footer-logo-text{
+    color: #fff;
+    text-align: center;
+
+}
+.footer-logo ul{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.footer-logo ul li{
+    width: 200px;
+    height: 150px;
+    list-style-type: none;
+    margin: 0 5px;
+}
+.footer-logo ul li img{
+    display: block;
+    width: 100%;
+    height: 50%;
+    object-position: center;
+    object-fit: cover;
+}

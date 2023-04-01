@@ -1,4 +1,5 @@
 <?php
+
     require(dirname(__DIR__,1).'\models\loginModel.php');
     if(isset($_POST['action'])){
         if ($_POST['action'] == "login") { func1(); }
