@@ -3,7 +3,7 @@ class Database {
     private static $instance = null;
     private $conn;
 
-    private $host = 'localhost';
+    private $host = 'localhost:3306';
     private $db_name = 'phone_shop';
     private $username = 'root';
     private $password = '';
