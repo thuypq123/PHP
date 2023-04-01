@@ -37,6 +37,7 @@ if (!isset($_SESSION)) {
     </div>
 </section>
 
+<!-- Front-end Chi tiet san pham -->
 <!-- <section>
         <div class="intro-details">
             <div class="center-page">

@@ -256,12 +256,14 @@ samp {
   unicode-bidi: bidi-override;
 }
 
+/* disable: phần back-end bên trong */
 pre {
   display: block;
   margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
   font-size: 0.875em;
+  display: none;
 }
 pre code {
   font-size: inherit;
@@ -4505,7 +4507,9 @@ textarea.form-control-lg {
 .navbar-dark .navbar-text a:focus {
   color: #fff;
 }
-
+/* Thanhdev */
+/* cursor: pointer;
+  box-shadow: -4px -4px 8px rgb(134 134 134 / 20%), 4px 4px 8px rgb(28 28 28 / 40%); */
 .card {
   position: relative;
   display: flex;
@@ -4515,7 +4519,13 @@ textarea.form-control-lg {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 8px;
+  width: 100%;
+}
+/* Thanhdev */
+.card:hover{
+    cursor: pointer;
+    box-shadow: -4px -4px 8px rgb(134 134 134 / 20%), 4px 4px 8px rgb(28 28 28 / 40%);
 }
 .card > hr {
   margin-right: 0;
@@ -7488,8 +7498,9 @@ textarea.form-control-lg {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
 }
-
+/* Thanhdev */
 .py-5 {
+  background-color: #ccc;
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
 }
