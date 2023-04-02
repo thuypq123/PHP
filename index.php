@@ -4,7 +4,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
     session_start();
     $GetURL =  parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    echo $GetURL;
     if ($GetURL == '/' || $GetURL == '/index.php') {
         // Nếu yêu cầu là trang chủ, gọi đến HomeController
         require(dirname(__FILE__).'\app\controllers\SanPhamController.php');
@@ -48,8 +47,9 @@ error_reporting(E_ALL);
         require(dirname(__FILE__).'\app\controllers\adminControllers\product_adminController.php');
         $ProductAdminController = new ProductController();
         $ProductAdminController->getAllSanPham();
-    }
-    else {
+    }elseif($GetURL == '/profile'){
+        require('./app/views/profile.php');
+    }else {
         header('HTTP/1.0 404 Not Found');
         echo 'Page not found';
     }

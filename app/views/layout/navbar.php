@@ -47,7 +47,7 @@
                             </li>
                         </ul>
                         <form action="/profile" class="d-flex" method="POST" >
-                            <button type="submit" class="btn btn-outline-dark" style = "margin-right: 10px"><i class="bi bi-person-circle"></i></button>
+                            <button type="submit" class="btn btn-outline-dark" style = "margin-right: 10px;height: 40px;"><i class="bi bi-person-circle"></i></button>
                         </form>
                         <form class="d-flex" action="/shopping">
                             <button class="btn btn-outline-dark" type="submit" style = "margin-right: 10px">
