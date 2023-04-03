@@ -487,10 +487,12 @@ progress {
 [hidden] {
   display: none !important;
 }
-
+/* Thanhdev */
 .lead {
-  font-size: 1.25rem;
+  font-size: 2rem;
   font-weight: 300;
+  color: #ffff !important;
+  margin-top: 10px;
 }
 
 .display-1 {
@@ -4519,7 +4521,7 @@ textarea.form-control-lg {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 8px;
+  /* border-radius: 8px; */
   width: 100%;
 }
 /* Thanhdev */
@@ -4553,6 +4555,7 @@ textarea.form-control-lg {
 .card-body {
   flex: 1 1 auto;
   padding: 1rem 1rem;
+
 }
 
 .card-title {
@@ -7468,7 +7471,12 @@ textarea.form-control-lg {
   padding-right: 1.5rem !important;
   padding-left: 1.5rem !important;
 }
-
+/* thanhdev */
+.container img{
+  width: 100%;
+  margin: 10px;
+  border-radius: 12px;
+}
 .px-5 {
   padding-right: 3rem !important;
   padding-left: 3rem !important;
@@ -7480,8 +7488,8 @@ textarea.form-control-lg {
 }
 
 .py-1 {
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
+  /* padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important; */
 }
 
 .py-2 {
