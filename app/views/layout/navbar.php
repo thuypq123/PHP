@@ -31,6 +31,7 @@
     <?php
     $GetURL =  parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     if ($GetURL !== '/register' && $GetURL !== '/login') {
+        $page = "/views/Mac.php";
         echo '
                 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navbar-default ">
                 <div class="container px-4 px-lg-5">
@@ -46,7 +47,7 @@
                                     <li><a class="dropdown-item" href="#!">All Products</a></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li><a class="dropdown-item" href="#!">iPhone</a></li>
-                                    <li><a class="dropdown-item" href="#!">Mac</a></li>
+                                    <li><a class="dropdown-item" href="$Mac.php">Mac</a></li>
                                     <li><a class="dropdown-item" href="#!">iPad</a></li>
                                     <li><a class="dropdown-item" href="#!">Watch</a></li>
                                     <li><a class="dropdown-item" href="#!">Âm thanh</a></li>
