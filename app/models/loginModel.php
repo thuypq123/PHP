@@ -24,7 +24,7 @@
                 $query = "SELECT * FROM khachhang INNER JOIN hoadon 
                 WHERE khachhang.MaKhachHang = hoadon.MaKhachHang 
                 and khachhang.MaKhachHang = ".$row["MaKhachHang"].
-                " and hoadon.ThanhToan = 0"; 
+                " and hoadon.TinhTrang = 0"; 
                 $result = mysqli_query($conn, $query);
                 $row = mysqli_fetch_array($result);
                 if(!$row){
