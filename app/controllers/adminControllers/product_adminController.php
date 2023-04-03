@@ -1,6 +1,8 @@
 <?php
-    session_start();
-    if (!$_SESSION["isLoginAdmin"]){
+    if (!isset($_SESSION)){
+        session_start();
+    }
+        if (!$_SESSION["isLoginAdmin"]){
         header('Location: /login_admin');
     }
     // echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
@@ -17,7 +19,7 @@
                     $SanPham[] = $row;
                 }
             }
-            require(dirname(__DIR__, 2).'\views\adminViews\product_admin.php');
+            require(dirname(__DIR__, 2).'\views\adminViews\productAdmin\product_admin.php');
         }
         public function getSanPhamById($id) {
             $sanPhamModel = new SanPhamModel();

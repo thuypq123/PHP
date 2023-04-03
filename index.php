@@ -47,6 +47,11 @@ error_reporting(E_ALL);
         require(dirname(__FILE__).'\app\controllers\adminControllers\product_adminController.php');
         $ProductAdminController = new ProductController();
         $ProductAdminController->getAllSanPham();
+    }elseif ($GetURL == '/product_admin/edit') {
+        require(dirname(__FILE__).'\app\controllers\adminControllers\product_adminController.php');
+        $ProductAdminController = new ProductController();
+        $sanpham = $ProductAdminController->getSanPhamById($_GET['id']);
+        require('./app/views/adminViews/productAdmin/updateProduct_admin.php');
     }elseif($GetURL == '/profile'){
         require('./app/views/profile.php');
     }else {

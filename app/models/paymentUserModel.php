@@ -42,25 +42,16 @@
                 $data[] = $row;
             }
             for($i = 0; $i < count($data); $i++) {
-                // $query = "SELECT * FROM chitiethoadon WHERE MaHoaDon = ".$data[$i]["MaHoaDon"]."";
-                $query = "SELECT * FROM chitiethoadon WHERE MaHoaDon = '15'";
+                $query = "SELECT * FROM chitiethoadon WHERE MaHoaDon = ".$data[$i]["MaHoaDon"]."";
                 $resultCTHD = mysqli_query($conn, $query);
-                $row = mysqli_fetch_array($resultCTHD);
-                header('Content-Type: application/json; charset=utf-8');
-                echo json_encode($row);
-            // loop data and get sanpham by MaHoaDon from chitiethoadon and sanpham table
-            // while ($row = mysqli_fetch_assoc($result)){
-            //     $query = "SELECT * FROM chitiethoadon WHERE MaHoaDon = '$row[MaHoaDon]'";
-            //     $resultCTHD = mysqli_query($conn, $query);
-            //     $rowCTHD = mysqli_fetch_assoc($resultCTHD);            
-                // while($rowCTHD = mysqli_fetch_assoc($resultCTHD)){
-                //     $query = "SELECT * FROM sanpham WHERE MaSanPham = '$rowCTHD[MaSanPham]'";
-                //     $resultSP = mysqli_query($conn, $query);
-                //     $rowSP = mysqli_fetch_assoc($resultSP);
-                //     $rowCTHD["SanPham"] = $rowSP;
-                // }
-                // $row["ChiTietHoaDon"] = $rowCTHD;
-                // $data[] = $row;
+                $row = mysqli_fetch_all($resultCTHD, MYSQLI_ASSOC);
+                for($j = 0; $j < count($row); $j++) {
+                    $query = "SELECT * FROM sanpham WHERE MaSanPham = '".$row[$j]["MaSanPham"]."'";
+                    $resultSP = mysqli_query($conn, $query);
+                    $rowSP = mysqli_fetch_assoc($resultSP);
+                    $row[$j]["TenSanPham"] = $rowSP["TenSanPham"];
+                    $row[$j]["AnhSanPham"] = $rowSP["AnhSanPham"];
+                }
             } 
         }
     }

@@ -5,15 +5,13 @@
             $conn = Database::getInstance();
             $query = "SELECT * FROM sanpham"; 
             $result = mysqli_query($conn, $query);
-            mysqli_close($conn);
             return $result;
         }
         public function getSanPhamById($id) {
             $conn = Database::getInstance();
             $query = "SELECT * FROM sanpham WHERE MaSanPham = '$id'"; 
-            // echo 1 row of data
             $result = mysqli_query($conn, $query);
-            $row = mysqli_fetch_array($result);
+            $row = mysqli_fetch_assoc($result);
             return $row;
         }
         public function getLimitSanPham($limit) {

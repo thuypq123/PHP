@@ -27,6 +27,9 @@ require('./app/views/layout/admin_navbar.php');
             <th>Id</th>
             <th>TenSanPham</th>
             <th>GiaSanPham</th>
+            <th>SoLuongSanPham</th>
+            <th></th>
+            <th></th>
             <!-- <th>Office</th>
                 <th>Age</th>
                 <th>Start date</th>
@@ -40,6 +43,9 @@ require('./app/views/layout/admin_navbar.php');
             echo '<td>' . $sp['MaSanPham'] . '</td>';
             echo '<td>' . $sp['TenSanPham'] . '</td>';
             echo '<td>' . $sp['GiaSanPham'] . '</td>';
+            echo '<td>' . $sp['SoLuongSanPham'] . '</td>';
+            echo '<td><a href="/product_admin/edit?id='.$sp['MaSanPham'].'">Edit</a></td>';
+            echo '<td><a href="/admin/product/delete/' . $sp['MaSanPham'] . '">Delete</a></td>';
             echo '</tr>';
           }
           ?>
