@@ -1,18 +1,18 @@
 <?php
 require_once(dirname(__DIR__, 3) . '\config\db.php');
-class SanPhamModel
+class LoaiSanPhamModel
 {
-    public function getAllSanPham()
+    public function getAllLoaiSanpham()
     {
         $conn = Database::getInstance();
-        $query = "SELECT * FROM sanpham";
+        $query = "SELECT * FROM loaisanpham";
         $result = mysqli_query($conn, $query);
-        return $result;
+        return $result; 
     }
-    public function getSanPhamById($id)
+    public function getLoaiSanPhamById($id)
     {
         $conn = Database::getInstance();
-        $query = "SELECT * FROM sanpham WHERE MaSanPham = '$id'";
+        $query = "SELECT * FROM loaisanpham WHERE MaLoai = '$id'";
         $result = mysqli_query($conn, $query);
         $row = mysqli_fetch_assoc($result);
         return $row;
@@ -24,10 +24,10 @@ class SanPhamModel
         $result = mysqli_query($conn, $query);
         return $result;
     }
-    public function updateProduct($MaLoai, $MaSanPham, $TenSanPham, $GiaSanPham, $SoLuongSanPham, $AnhSanPham, $NgayCapNhat, $ChiTiet)
+    public function updateCategory($MaLoai, $TenLoai)
     {
         $conn = Database::getInstance();
-        $sql = "UPDATE sanpham SET MaLoai='$MaLoai', TenSanPham='$TenSanPham', GiaSanPham='$GiaSanPham', SoLuongSanPham='$SoLuongSanPham', AnhSanPham='$AnhSanPham', NgayCapNhat='$NgayCapNhat', ChiTiet='$ChiTiet' WHERE MaSanPham='$MaSanPham'";
+        $sql = "UPDATE loaisanpham SET TenLoai='$TenLoai' WHERE MaLoai='$MaLoai'";
         $result = mysqli_query($conn, $sql);
         //close connection
         mysqli_close($conn);
@@ -37,10 +37,10 @@ class SanPhamModel
         }
         return false;
     }
-    public function createProduct($MaLoai, $MaSanPham, $TenSanPham, $GiaSanPham, $SoLuongSanPham, $AnhSanPham, $NgayNhap, $NgayCapNhat, $ChiTiet)
+    public function createCategory($MaLoai, $TenLoai)
     {
         $conn = Database::getInstance();
-        $sql = "INSERT INTO sanpham (MaLoai, MaSanPham, TenSanPham, GiaSanPham, SoLuongSanPham, AnhSanPham, NgayNhap, NgayCapNhat, ChiTiet) VALUES ('$MaLoai', '$MaSanPham', '$TenSanPham', '$GiaSanPham', '$SoLuongSanPham', '$AnhSanPham', '$NgayNhap', '$NgayCapNhat', '$ChiTiet')";
+        $sql = "INSERT INTO loaisanpham (MaLoai, TenLoai) VALUES ('$MaLoai', '$TenLoai')";
         $result = mysqli_query($conn, $sql);
         //close connection
         mysqli_close($conn);
@@ -50,10 +50,10 @@ class SanPhamModel
         return false;
     }
 
-    public function deleteProduct($MaSanPham)
+    public function deleteCategory($MaLoai)
     {
         $conn = Database::getInstance();
-        $sql = "DELETE FROM sanpham WHERE MaSanPham = '$MaSanPham'";
+        $sql = "DELETE FROM loaisanpham WHERE MaLoai = '$MaLoai'";
         $result = mysqli_query($conn, $sql);
         //close connection
         mysqli_close($conn);

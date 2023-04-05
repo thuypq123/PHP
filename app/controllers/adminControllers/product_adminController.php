@@ -40,5 +40,18 @@
             }
             return $SanPham;
         }
+        public function getLoaiSanPham() {
+            $loaisanPhamModel = new SanPhamModel();
+            $loaiSanPham = $loaisanPhamModel->getLoaiSanPham();
+            if (mysqli_num_rows($loaiSanPham) > 0) {
+                // Tạo một mảng để chứa dữ liệu đó
+                $maloai = array();
+                // Duyệt qua các bản ghi trong kết quả truy vấn và thêm chúng vào mảng dữ liệu
+                while ($row = mysqli_fetch_assoc($loaiSanPham)) {
+                    $maloai[] = $row;
+                }
+            }
+            return $maloai;
+        }
     }
 ?>

@@ -47,12 +47,39 @@ error_reporting(E_ALL);
         require(dirname(__FILE__).'\app\controllers\adminControllers\product_adminController.php');
         $ProductAdminController = new ProductController();
         $ProductAdminController->getAllSanPham();
-    }elseif ($GetURL == '/product_admin/edit') {
+    }elseif ($GetURL == '/product_admin/update') {
         require(dirname(__FILE__).'\app\controllers\adminControllers\product_adminController.php');
         $ProductAdminController = new ProductController();
         $sanpham = $ProductAdminController->getSanPhamById($_GET['id']);
+        $loaisanpham = $ProductAdminController->getLoaiSanPham();
         require('./app/views/adminViews/productAdmin/updateProduct_admin.php');
-    }elseif($GetURL == '/profile'){
+    }elseif ($GetURL == '/product_admin/create') {
+        require(dirname(__FILE__).'\app\controllers\adminControllers\product_adminController.php');   
+        $ProductAdminController = new ProductController(); 
+        $loaisanpham = $ProductAdminController->getLoaiSanPham();
+        require('./app/views/adminViews/productAdmin/createProduct_admin.php');
+    }elseif ($GetURL == '/category_admin') {
+        require(dirname(__FILE__).'\app\controllers\adminControllers\category_adminController.php');
+        $CategoryAdminController = new CategoryController();
+        $CategoryAdminController->getAllLoaiSanpham();
+    }elseif ($GetURL == '/category_admin/create') {
+        require('./app/views/adminViews/categoryAdmin/createCategory_admin.php');
+    }elseif ($GetURL == '/category_admin/update') {
+        require(dirname(__FILE__).'\app\controllers\adminControllers\category_adminController.php');
+        $CategoryAdminController = new CategoryController();
+        $loaisanpham = $CategoryAdminController->getLoaiSanPhamById($_GET['id']);
+        require('./app/views/adminViews/categoryAdmin/updateCategory_admin.php');
+    }elseif ($GetURL == '/bill_admin') {
+        require(dirname(__FILE__).'\app\controllers\adminControllers\bill_adminController.php');
+        $BillAdminController = new BillController();
+        $BillAdminController->getAllBill();
+    }elseif ($GetURL == '/bill_admin/update') {
+        require(dirname(__FILE__).'\app\controllers\adminControllers\bill_adminController.php');
+        $BillAdminController = new BillController();
+        $bill = $BillAdminController->getBillById($_GET['id']);
+        $detailBill = $BillAdminController->getDetailBillById($_GET['id']);
+        require('./app/views/adminViews/billAdmin/updateBill_admin.php');
+    }elseif ($GetURL == '/profile'){
         require('./app/views/profile.php');
     }else {
         header('HTTP/1.0 404 Not Found');

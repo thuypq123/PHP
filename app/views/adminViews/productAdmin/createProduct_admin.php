@@ -6,7 +6,7 @@ require('./app/views/layout/admin_navbar.php');
   <div class="page-breadcrumb">
     <div class="row">
       <div class="col-12 d-flex no-block align-items-center">
-        <h4 class="page-title">Upload</h4>
+        <h4 class="page-title">Create</h4>
         <div class="ms-auto text-end">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -20,7 +20,7 @@ require('./app/views/layout/admin_navbar.php');
   </div>
   <div class="container-fluid" style="background-color: white;">
     <div class="row">
-      <h1>Upload</h1>
+      <h1>Create</h1>
       <form method="post">
         <div class="mb-4">
           <label class="form-label" for="form6Example3">Loại sản phẩm</label>
@@ -36,14 +36,13 @@ require('./app/views/layout/admin_navbar.php');
         <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
-              <input id="MaSanPham" disabled type="text" value="<?php echo $sanpham['MaSanPham'] ?>"
-                class="form-control" />
+              <input id="MaSanPham" type="text" class="form-control" />
               <label class="form-label" for="form6Example1">Mã sản phẩm</label>
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
-              <input id="TenSanPham" value="<?php echo $sanpham['TenSanPham'] ?>" type="text" class="form-control" />
+              <input id="TenSanPham"  type="text" class="form-control" />
               <label class="form-label" for="form6Example1">Tên sản phẩm</label>
             </div>
           </div>
@@ -51,14 +50,14 @@ require('./app/views/layout/admin_navbar.php');
         <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
-              <input id="GiaSanPham" value="<?php echo $sanpham['GiaSanPham'] ?>" type="number "
+              <input id="GiaSanPham"  type="number"
                 class="form-control" />
               <label class="form-label" for="form6Example1">Giá sản phẩm</label>
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
-              <input id="SoLuongSanPham" value="<?php echo $sanpham['SoLuongSanPham'] ?>" type="text"
+              <input id="SoLuongSanPham"  type="number"
                 class="form-control" />
               <label class="form-label" for="form6Example1">Số lượng sản phẩm</label>
             </div>
@@ -68,20 +67,19 @@ require('./app/views/layout/admin_navbar.php');
 
         <!-- Text input -->
         <div class="form-outline mb-4">
-          <input id="AnhSanPham" value="<?php echo $sanpham['AnhSanPham'] ?>" type="text" class="form-control" />
+          <input id="AnhSanPham"  type="text" class="form-control" />
           <label class="form-label" for="form6Example3">Ảnh sản phẩm</label>
         </div>
         <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
-              <input disabled value="<?php echo $sanpham['NgayNhap'] ?>" type="datetime-local"
-                class="form-control" />
+              <input id="NgayNhap" type="datetime-local" disabled class="form-control" />
               <label class="form-label" for="form6Example1">Ngày nhập</label>
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
-              <input id="NgayCapNhat" type="datetime-local" class="form-control" />
+              <input id="NgayCapNhat" type="datetime-local" disabled class="form-control" />
               <label class="form-label" for="form6Example2">Ngày cập nhật</label>
             </div>
           </div>
@@ -89,16 +87,21 @@ require('./app/views/layout/admin_navbar.php');
 
         <!-- Message input -->
         <div class="form-outline mb-4">
-          <textarea id="ChiTiet" class="form-control" rows="4"><?php echo $sanpham['ChiTiet'] ?></textarea>
+          <textarea id="ChiTiet" class="form-control" rows="4"></textarea>
           <label class="form-label" for="form6Example7">Thông tin chi tiết</label>
         </div>
 
         <!-- Submit button -->
-        <button onclick="updateProduct()" type="button" class="btn btn-primary btn-block mb-4">Update</button>
+        <button onclick="createProduct()" type="button" class="btn btn-primary btn-block mb-4">Creat</button>
       </form>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  var now = new Date();
+  now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+  document.getElementById('NgayNhap').value = now.toISOString().slice(0, 16);
+</script>
 <script type="text/javascript">
   var now = new Date();
   now.setMinutes(now.getMinutes() - now.getTimezoneOffset());

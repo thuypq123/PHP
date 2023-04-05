@@ -209,14 +209,14 @@
                                 href="/admin" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">Trang chủ</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="charts.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span
+                                href="/bill_admin" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span
                                     class="hide-menu">Đơn hàng</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="/product_admin" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
                                     class="hide-menu">Sản phẩm</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="tables.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
-                                    class="hide-menu">Tables</span></a></li>
+                                href="/category_admin" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                                    class="hide-menu">Loại sản phẩm</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span
                                     class="hide-menu">Full Width</span></a></li>

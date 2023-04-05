@@ -81,6 +81,7 @@ const getCard = async () => {
             document.getElementById('total').innerHTML = formatter.format(sum);
 
             // inner card to html
+            if(data.length > 0){
             data.map((item) => {
                 card.innerHTML += `
                 <div class="d-flex align-items-center mb-5">
@@ -124,6 +125,16 @@ const getCard = async () => {
                   </div>
                 `;
             });
+        }else{
+            card.innerHTML = `
+            <div class="d-flex align-items-center mb-5">
+                <div class="flex-grow-1 ms-3">
+                  <h5 class="text-secondary">Giỏ hàng trống</h5>
+                </div>
+              </div>
+            `;
+            document.getElementById('btn-payment').disabled = true;
+        }
         },
         error: function (error) {
             console.log(error);

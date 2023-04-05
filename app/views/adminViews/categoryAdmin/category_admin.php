@@ -6,7 +6,7 @@ require('./app/views/layout/admin_navbar.php');
   <div class="page-breadcrumb">
     <div class="row">
       <div class="col-12 d-flex no-block align-items-center">
-        <h4 class="page-title">Product</h4>
+        <h4 class="page-title">Category</h4>
         <div class="ms-auto text-end">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -19,16 +19,14 @@ require('./app/views/layout/admin_navbar.php');
     </div>
   </div>
   <div class="container-fluid" style="background-color: white;">
-    <h1>Product</h1>
-    <a href="/product_admin/create" class="btn btn-primary btn-rounded" style="margin: 10px;">Create</a>
+    <h1>Category</h1>
+    <a href="/category_admin/create" class="btn btn-primary btn-rounded" style="margin: 10px;">Create</a>
     <div class="row">
       <table id="example" class="display" style="width:100%">
         <thead>
           <tr>
             <th>Id</th>
-            <th>Tên sản phẩm</th>
-            <th>Giá</th>
-            <th>Số lượng</th>
+            <th>Tên loại sản phẩm</th>
             <th></th>
             <th></th>
             <!-- <th>Office</th>
@@ -39,14 +37,12 @@ require('./app/views/layout/admin_navbar.php');
         </thead>
         <tbody>
           <?php
-          foreach ($SanPham as $sp) {
+          foreach ($LoaiSanPham as $lsp) {
             echo '<tr>';
-            echo '<td>' . $sp['MaSanPham'] . '</td>';
-            echo '<td>' . $sp['TenSanPham'] . '</td>';
-            echo '<td>' . $sp['GiaSanPham'] . '</td>';
-            echo '<td>' . $sp['SoLuongSanPham'] . '</td>';
-            echo '<td><a href="/product_admin/update?id=' . $sp['MaSanPham'] . '" class="btn btn-success  btn-rounded">Edit</a></td>';
-            echo '<td><button onclick="deleteProduct(\''.$sp['MaSanPham'] .'\')" type="button" class="btn btn-danger btn-rounded" >Delete</button></td>';
+            echo '<td>' . $lsp['MaLoai'] . '</td>';
+            echo '<td>' . $lsp['TenLoai'] . '</td>';
+            echo '<td><a href="/category_admin/update?id=' . $lsp['MaLoai'] . '" class="btn btn-success  btn-rounded">Edit</a></td>';
+            echo '<td><button onclick="deleteCategory(\''.$lsp['MaLoai'] .'\')" type="button" class="btn btn-danger btn-rounded" >Delete</button></td>';
             echo '</tr>';
           }
           ?>
@@ -62,7 +58,7 @@ require('./app/views/layout/admin_navbar.php');
     let table = new DataTable('#example');
   });
 </script>
-<script src="../../../public/js/adminJs/product_admin.js"></script>
+<script src="../../../public/js/adminJs/category_admin.js"></script>
 <?php
 // echo dirname(__FILE__);
 require('./app/views/layout/admin_footer.php');

@@ -54,7 +54,7 @@ require('./app/views/layout/navbar.php');
                   <p class="mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit <a class="text-secondary"
                       href="#!">obcaecati sapiente</a>.</p>
 
-                  <button onclick = "addToHoaDon()" type="button" class="bg-dark text-light btn-block btn-lg"><i class="bi bi-cash-coin" style="font-size: 2rem; margin: auto"></i></button>
+                  <button id="btn-payment" onclick = "addToHoaDon()" type="button" class="bg-dark text-light btn-block btn-lg"><i class="bi bi-cash-coin" style="font-size: 2rem; margin: auto"></i></button>
                   
 
                   <h5 class="fw-bold mb-5" style="position: absolute; bottom: 0;">
