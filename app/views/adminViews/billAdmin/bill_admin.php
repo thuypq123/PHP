@@ -33,7 +33,6 @@ require('./app/views/layout/admin_navbar.php');
             <th>Vận chuyển</th>
             <th>Thanh toán</th>
             <th></th>
-            <th></th>
             <!-- <th>Office</th>
                 <th>Age</th>
                 <th>Start date</th>
@@ -57,12 +56,11 @@ require('./app/views/layout/admin_navbar.php');
               echo '<td><button class="btn btn-outline-success  btn-rounded">Đã vận chuyển</button></td>';
             }
             if ($bill['ThanhToan'] == 0) {
-              echo '<td><button class="btn btn-outline-warning  btn-rounded">Chưa giao hàng</button></td>';
+              echo '<td><button class="btn btn-outline-warning  btn-rounded">Chưa thanh toán</button></td>';
             } else {
-              echo '<td><button class="btn btn-outline-success  btn-rounded">Đã giao hàng</button></td>';
+              echo '<td><button class="btn btn-outline-success  btn-rounded">Đã thanh toán</button></td>';
             }
-            echo '<td><a href="/bill_admin/update?id=' . $bill['MaHoaDon'] . '" class="btn btn-success  btn-rounded">Edit</a></td>';
-            echo '<td><button onclick="deleteCategory(\''.$bill['MaHoaDon'] .'\')" type="button" class="btn btn-danger btn-rounded" >Delete</button></td>';
+            echo '<td><a href="/bill_admin/update?id=' . $bill['MaHoaDon'] . '" class="btn btn-success  btn-rounded">Edit</a></td>';  
             echo '</tr>';
           }
           ?>

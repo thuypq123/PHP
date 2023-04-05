@@ -157,8 +157,10 @@
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <center>
+                        <li class="nav-item ">
+                        <a class="" href="/logout" style="color: white;"><i class="fa fa-power-off me-1 ms-1"></i>
+                                        Logout</a>
+                            <!-- <center>
                                 <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#"
                                     id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src="../../../public/assets/images/users/1.jpg" alt="user"
@@ -184,7 +186,7 @@
                                     <div class="ps-4 p-10"><a href="javascript:void(0)"
                                             class="btn btn-sm btn-success btn-rounded text-white">View Profile</a></div>
                                 </ul>
-                            </center>
+                            </center> -->
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->

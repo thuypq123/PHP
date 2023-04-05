@@ -2,8 +2,7 @@
 // echo dirname(__FILE__);
 require('./app/views/layout/admin_navbar.php');
 require('./app/controllers/adminControllers/product_adminController.php');
-
-
+require_once('./config/db.php');
 ?>
 
 <div class="page-wrapper">
@@ -31,8 +30,14 @@ require('./app/controllers/adminControllers/product_adminController.php');
                         <h5>Mã hóa đơn:
                             <?php echo $bill['MaHoaDon'] ?>
                         </h5>
-                        <h5>Mã khách hàng:
-                            <?php echo $bill['MaKhachHang'] ?>
+                        <input type="hidden" id="MaHoaDon" value="<?php echo $bill['MaHoaDon'] ?>">
+                        <h5>Tên khách hàng:
+                            <?php
+                            $conn = Database::getInstance();
+                            $query = "SELECT * FROM khachhang WHERE MaKhachHang = " . $bill['MaKhachHang'];
+                            $result = mysqli_query($conn, $query);
+                            $khachhang = mysqli_fetch_assoc($result);
+                            echo $khachhang['TenKhachHang'] ?>
                         </h5>
                         <h5>Ngày Lập:
                             <?php echo $bill['NgayLap'] ?>
@@ -46,13 +51,13 @@ require('./app/controllers/adminControllers/product_adminController.php');
                     </div>
                     <div class="col-6">
                         <h5>Trạng thái vận chuyển</h5>
-                        <select class="browser-default custom-select">
+                        <select id="VanChuyen" class="browser-default custom-select">
                             <option value="<?php echo $bill['VanChuyen'] ? '1' : '0' ?>"><?php echo $bill['VanChuyen'] ? 'Đã vận chuyển' : 'Chưa vận chuyển' ?></option>
                             <option value="<?php echo $bill['VanChuyen'] ? '0' : '1' ?>"><?php echo $bill['VanChuyen'] ? 'Chưa vận chuyển' : 'Đã vận chuyển' ?></option>
                         </select>
 
                         <h5>Trạng thái thanh toán</h5>
-                        <select class="browser-default custom-select">
+                        <select id="ThanhToan" class="browser-default custom-select">
                             <option value="<?php echo $bill['ThanhToan'] ? '1' : '0' ?>"><?php echo $bill['ThanhToan'] ? 'Đã thanh toán' : 'Chưa thanh toán' ?></option>
                             <option value="<?php echo $bill['ThanhToan'] ? '0' : '1' ?>"><?php echo $bill['ThanhToan'] ? 'Chưa thanh toán' : 'Đã thanh toán' ?></option>
                         </select>
@@ -61,7 +66,7 @@ require('./app/controllers/adminControllers/product_adminController.php');
 
                 <br>
                 <div class="row">
-                    <table class="table table-striped align-middle mb-0 bg-white">
+                    <table class="table align-middle mb-0 bg-white">
                         <thead class="bg-light">
                             <tr>
                                 <th>Ảnh</th>
@@ -71,32 +76,38 @@ require('./app/controllers/adminControllers/product_adminController.php');
                             </tr>
                         </thead>
                         <tbody>
-                            <?php                     
+                            <?php
                             $product = new ProductController();
 
                             foreach ($detailBill as $detail) {
                                 $productInfo = $product->getSanPhamById($detail['MaSanPham']);
                                 echo '<tr>';
-                                echo '<td> <img src= "'.  $productInfo['AnhSanPham'] . '" height="50" > </td>';
+                                echo '<td> <img src= "' . $productInfo['AnhSanPham'] . '" height="50" > </td>';
                                 echo '<td>' . $productInfo['TenSanPham'] . '</td>';
                                 echo '<td>' . $detail['SoLuong'] . '</td>';
-                                echo '<td>' . $detail['TongTien'] . '</td>';
+                                echo '<td>' . $detail['TongTien'] . ' VND</td>';
                                 echo '</tr>';
                             }
-                            
+
                             ?>
                         </tbody>
                     </table>
                 </div>
-
-
+                <br>
+                <div class="row justify-content-end">
+                    <div class="col-4">
+                        <h5>Tổng tiền:
+                            <?php echo $bill['TongTien'] ?> VND
+                        </h5>
+                    </div>
+                </div>
                 <!-- Submit button -->
-                <button onclick="updateCategory()" type="button" class="btn btn-primary btn-block mb-4">Update</button>
+                <button onclick="updateBill()" type="button" class="btn btn-primary btn-block mb-4">Update</button>
             </form>
         </div>
     </div>
 </div>
-<script src="../../../public/js/adminJs/category_admin.js"></script>
+<script src="../../../public/js/adminJs/bill_admin.js"></script>
 
 <?php
 // echo dirname(__FILE__);

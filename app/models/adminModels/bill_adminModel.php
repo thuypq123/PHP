@@ -24,40 +24,15 @@ class BillModel
         $result = mysqli_query($conn, $query);
         return $result;
     }
-    public function updateCategory($MaLoai, $TenLoai)
-    {
+    public function updateBill($MaHoaDon, $VanChuyen, $ThanhToan)
+    {      
         $conn = Database::getInstance();
-        $sql = "UPDATE loaisanpham SET TenLoai='$TenLoai' WHERE MaLoai='$MaLoai'";
+        $sql = "UPDATE hoadon SET VanChuyen='$VanChuyen', ThanhToan='$ThanhToan' WHERE MaHoaDon='$MaHoaDon'";
         $result = mysqli_query($conn, $sql);
         //close connection
         mysqli_close($conn);
         if ($result) {
             
-            return true;
-        }
-        return false;
-    }
-    public function createCategory($MaLoai, $TenLoai)
-    {
-        $conn = Database::getInstance();
-        $sql = "INSERT INTO loaisanpham (MaLoai, TenLoai) VALUES ('$MaLoai', '$TenLoai')";
-        $result = mysqli_query($conn, $sql);
-        //close connection
-        mysqli_close($conn);
-        if ($result) {     
-            return true;
-        }
-        return false;
-    }
-
-    public function deleteCategory($MaLoai)
-    {
-        $conn = Database::getInstance();
-        $sql = "DELETE FROM loaisanpham WHERE MaLoai = '$MaLoai'";
-        $result = mysqli_query($conn, $sql);
-        //close connection
-        mysqli_close($conn);
-        if ($result) {
             return true;
         }
         return false;
