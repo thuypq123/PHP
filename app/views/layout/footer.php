@@ -45,7 +45,7 @@
                 <li>
                     <span>Hỗ trợ khách hàng</span>
                     <a href="">
-                        Điều kiện giao dịch chung
+                        Điều kiện giao hàng 
                     </a>
                     <a href="">
                         Hướng dẫn mua hàng online
