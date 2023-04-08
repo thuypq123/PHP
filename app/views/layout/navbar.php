@@ -1,5 +1,4 @@
 <?php
-    
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +52,7 @@
                             <button class="btn btn-outline-dark" type="submit" style = "margin-right: 10px">
                                 <i class="bi-cart-fill me-1"></i>
                                 Cart
-                                <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                                <span class="badge bg-dark text-white ms-1 rounded-pill"></span>
                             </button>
                         </form>
                         <form action="clear-session" class="d-flex" method="POST" >
@@ -73,4 +72,5 @@
                 </div>
             </div>
         </header>
+        <script src="../../../public//js/getNumberNav.js"></script>
        

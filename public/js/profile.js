@@ -15,8 +15,8 @@ const getPaymentList = () => {
                         data-mdb-toggle="collapse" 
                         data-mdb-target="#flush-collapseOneX-${index}" 
                         aria-expanded="false" 
-                        aria-controls="flush-collapseOneX-${index}">
-                            Đơn Hàng #${index}
+                        aria-controls="flush-collapseOneX-${index}" class = "text-secondary">
+                            Đơn Hàng #${payment.MaHoaDon}
                         </button>
                     </h2>
                     <div id="flush-collapseOneX-${index}" class="accordion-collapse collapse" aria-labelledby="flush-headingOneX-2" data-mdb-parent="#accordionFlushExampleX">
@@ -94,3 +94,64 @@ const getPaymentList = () => {
     });
 };
 getPaymentList();
+
+const disableButton = () => {
+    document.getElementById('btn-profile').disabled = false;
+};
+const getProfile = () => {
+    $.ajax({
+        url: '../../app/controllers/profileController.php',
+        type: 'POST',
+        data: {
+            action: 'getProfile',
+        },
+    }).done((response) => {
+        document.getElementById('Fullname').value = response.TenKhachHang;
+        document.getElementById('Email').value = response.Email;
+        document.getElementById('SDT').value = response.SDT;
+        document.getElementById('DiaChi').value = response.DiaChi;
+
+        document.getElementById('Fullname').focus();
+        document.getElementById('Email').focus();
+        document.getElementById('SDT').focus();
+        document.getElementById('DiaChi').focus();
+    });
+};
+getProfile();
+
+const updateProfile = () => {
+    const Fullname = document.getElementById('Fullname').value;
+    const Email = document.getElementById('Email').value;
+    const SDT = document.getElementById('SDT').value;
+    const DiaChi = document.getElementById('DiaChi').value;
+    if (Fullname == '' || Email == '' || SDT == '' || DiaChi == '') {
+        // sweetarlet
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Vui lòng nhập đầy đủ thông tin!',
+        });
+        return;
+    } else {
+        $.ajax({
+            url: '../../app/controllers/profileController.php',
+            type: 'POST',
+            data: {
+                action: 'updateProfile',
+                HoTen: Fullname,
+                Email: Email,
+                SDT: SDT,
+                DiaChi: DiaChi,
+            },
+        }).done((response) => {
+            // sweet alert
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Cập nhật thông tin thành công!',
+            }).then((result) => {
+                getProfile();
+            });
+        });
+    }
+};
