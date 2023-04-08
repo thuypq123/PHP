@@ -3,7 +3,6 @@
     if (!$_SESSION["isLogin"]){
         header('Location: /login');
     }
-    echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
     require(dirname(__DIR__).'\models\SanPhamModel.php');
     class SanPhamController {
         public function getAllSanPham() {

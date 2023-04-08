@@ -9,6 +9,7 @@ error_reporting(E_ALL);
         require(dirname(__FILE__).'\app\controllers\SanPhamController.php');
         $sanPhamController = new SanPhamController();
         $sanPhamController->getAllSanPham();
+
     }elseif ($GetURL == '/detail') {
         // Nếu yêu cầu là trang chi tiết, gọi đến DetailController
         require(dirname(__FILE__).'\app\controllers\SanPhamController.php');
